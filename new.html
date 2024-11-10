@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Notes Generator only for my CHONU , BABY GIRL , MY WIFEYY , MY REST HALF❤️🥰🥰🥰🧿🧿</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { max-width: 400px; margin: 40px auto; padding: 20px; background-color: #f0f0f0; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        button { padding: 10px 20px; cursor: pointer; }
+        textarea { width: 100%; padding: 10px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Love Notes Generator only for my CHONU , BABY GIRL , MY WIFEYY , MY REST HALF❤️🥰🥰🥰🧿🧿</h2>
+        <label for="herName">Aditi:</label>
+        <input type="text" id="herName" value="Aditi" /><br><br>
+        <button onclick="generateLoveNote()">Generate Love Note</button>
+        <textarea id="loveNote" rows="8" readonly></textarea>
+    </div>
+
+    <script>
+        // Customizable Section
+        const favoriteQuotes = [
+            "Sweetheart,I am penning this down as you are the most precious, loveliest, and most important person in my life. This                             physical distance has become more troublesome than I thought. No matter where I go, I can catch a glimpse of you. They make me want to be close to you again.I love you for life. I cherish and appreciate every second we spend together, and when we are apart, I ache to be inside your heart. I can feel you close to me even though you’re far away. This evening, when I wrote this letter, it was like you were by my side. I feel your hands on my shoulders, your fingers on my hair, and the delicate breath of your kisses on my cheeks. Honey, I miss you. I love you so much that it is difficult for me to spend these days without you.",
+            "Love recognizes no barriers. It jumps hurdles, leaps fences, penetrates walls to arrive at its destination full of hope.",
+            // Add more as needed
+        ];
+        const sharedMemories = [
+            "Our first date under the rain and near the beaches",
+            
+            // Add more memories here
+        ];
+        const generalCompliments = [
+            "You light up my world in ways you'll never know.",
+            "Your smile is my happy place.",
+            // Add more compliments here
+        ];
+
+        function generateLoveNote() {
+            const herName = document.getElementById('herName').value;
+            const noteType = getRandomItem(['quote', 'memory', 'compliment']);
+            let note;
+
+            if (noteType === 'quote') {
+                note = `'${getRandomItem(favoriteQuotes)}' Thinking of you, ${herName}.`;
+            } else if (noteType === 'memory') {
+                const memory = getRandomItem(sharedMemories);
+                note = `Just remembered ${memory} and couldn't help but smile. Missing you, ${herName}.`;
+            } else {
+                note = `To the love of my life, ${herName}, ${getRandomItem(generalCompliments)}`;
+            }
+
+            document.getElementById('loveNote').value = note;
+        }
+
+        function getRandomItem(items) {
+            return items[Math.floor(Math.random() * items.length)];
+        }
+    </script>
+</body>
+</html>
